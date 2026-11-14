@@ -8,12 +8,6 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="caitlyn.webp" as="image">
 <link rel="stylesheet" href="style.css">
-<style>
-.song-panel{position:fixed;right:24px;bottom:24px;z-index:40;width:360px;max-width:calc(100vw - 32px);padding:16px;background:#15130f;border:1px solid #d8bd7b70;box-shadow:0 12px 60px #0009}
-.song-panel[hidden]{display:none}.song-panel-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.song-panel-head p{font-size:8px;letter-spacing:2px;color:#d8bd7b}
-.song-close{background:none;color:#d8bd7b;padding:3px 8px;font-size:22px;line-height:1}.song-panel iframe{border:0;border-radius:12px;display:block;width:100%;height:152px}.song-hint{font-size:10px;line-height:1.6;margin-top:10px;color:#c6c0b2}.song-hint a{color:#d8bd7b;text-decoration:underline}
-@media(max-width:800px){.song-panel{right:16px;bottom:16px;left:16px;width:auto;max-width:none}}
-</style>
 </head>
 <body class="sealed">
 <div class="invitation" id="invitation">
@@ -27,14 +21,9 @@
 </div>
 <header class="masthead">
   <a class="brand" href="#cover" aria-label="Caitlyn edition home">C<span>THE BIRTHDAY EDITION</span></a>
-  <div class="header-actions"><button id="musicToggle" class="sound-button" aria-expanded="false" aria-controls="songPanel" aria-label="Open Best Part song player"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="musicLabel">Our song</span></button><button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="contents">Contents <span aria-hidden="true">＋</span></button></div>
+  <div class="header-actions"><button id="musicToggle" class="sound-button" aria-pressed="false" aria-label="Play instrumental music"><span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span><span id="musicLabel">Sound off</span></button><button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="contents">Contents <span aria-hidden="true">＋</span></button></div>
 </header>
 <nav class="contents" id="contents" hidden aria-label="Edition contents"><span class="eyebrow">INSIDE THIS EDITION</span><a href="#cover">01 <span>The birthday girl</span></a><a href="#us">02 <span>My favourite photo</span></a><a href="#beginning">03 <span>A little bit of our story</span></a><a href="#little-things">04 <span>Things I adore</span></a><a href="#outtakes">05 <span>Keeping all of them</span></a><a href="#letter">06 <span>From your man</span></a></nav>
-<aside class="song-panel" id="songPanel" hidden aria-label="Our song: Best Part">
-<div class="song-panel-head"><p>A SONG FOR YOU, BEAUTIFUL</p><button class="song-close" id="closeSong" aria-label="Hide song player">×</button></div>
-<iframe title="Best Part — Daniel Caesar featuring H.E.R. on Spotify" src="https://open.spotify.com/embed/track/1Q7EgiMOuwDcB0PJC6AzON?utm_source=generator&amp;theme=0" width="100%" height="152" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-<p class="song-hint">Tap Play, then take your time with our memories. <a href="https://open.spotify.com/track/1Q7EgiMOuwDcB0PJC6AzON" target="_blank" rel="noopener noreferrer">Open in Spotify ↗</a></p>
-</aside>
 <main>
 <section class="cover" id="cover" aria-label="Birthday cover">
   <img class="cover-photo" src="caitlyn.webp" alt="Caitlyn, the birthday girl" fetchpriority="high">
@@ -78,8 +67,10 @@
 </section>
 <section class="finale" id="birthday"><span class="eyebrow reveal">ONE LAST THING, BEAUTIFUL</span><h2 class="reveal">To infinity.<br><em>And then some.</em></h2><p class="reveal">You can argue that you love me more.<br>I made an entire birthday edition, so…</p><button class="gold-button reveal" id="birthdayButton">Who loves you more? <span aria-hidden="true">→</span></button><p class="birthday-answer" id="birthdayAnswer" aria-live="polite"></p><div class="final-monogram" aria-hidden="true">C</div><p class="final-wish">HAPPY BIRTHDAY, CAITLYN</p><a href="#cover" class="back-top">Read it all again ↑</a></section>
 </main>
-<footer><span>THE CAITLYN EDITION</span><span>ONE OF ONE. MADE WITH LOVE.</span><a class="music-credit" href="https://open.spotify.com/track/1Q7EgiMOuwDcB0PJC6AzON" target="_blank" rel="noopener noreferrer">OUR SONG: BEST PART · DANIEL CAESAR FEAT. H.E.R.</a></footer>
+<footer><span>THE CAITLYN EDITION</span><span>ONE OF ONE. MADE WITH LOVE.</span><span class="music-credit"><a href="https://www.scottbuckley.com.au/library/reverie/" target="_blank" rel="noopener noreferrer">REVERIE · SCOTT BUCKLEY</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · ADJUSTED FOR SOFT BACKGROUND PLAYBACK</span></footer>
 <dialog id="photoDialog"><button class="dialog-close" id="closePhoto" aria-label="Close photo">Close ×</button><img id="dialogImage" alt=""><p id="dialogCaption"></p></dialog>
+<audio id="ambience" src="birthday-instrumental.mp3" loop preload="auto"></audio>
 <script src="script.js"></script>
 </body></html>
+
 
